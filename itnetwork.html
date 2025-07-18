@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+
+<!-- HEAD -->
+
+<head>
+
+    <title>CESAE Digital Online Courses</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Thiago Oliveira, Pedro Bento, Ana Vale, Gonçalo Rio">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- META TAG VIEWPORT (inserir para responsividade) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+
+<!-- BODY-->
+
+<body>
+
+    <!-- BARRA DE NAVEGAÇÃO-->
+
+    <!-- 
+    'navbar': barra de navegação 
+    'navbar-expand-lg': expande a navbar em telas grandes (≥ 1024px) 
+    'custom-navbar': classe personalizada para estilos adicionais
+    'px-3 py-2': padding para telas pequenas
+    'px-lg-5 py-lg-4': aumenta o padding para telas grandes (≥ 1024px)
+    'd-flex': classe no Bootstrap usada p/ transformar o contêiner (ex: uma div) em um contêiner flexível que permite mais controle de alinhamento, distribuição e direção dos itens dentro dele, usando as propriedades do Flexbox.  
+    -->
+    <nav class="navbar navbar-expand-lg custom-navbar d-flex px-2 py-1 px-lg-4 py-lg-1">
+        <div class="container-fluid">
+
+
+            <!-- Logo responsivo -->  
+
+            <!-- href="/" redireciona para a própria home -->
+            <!-- img-fluid do Bootstrap garante que o logo se ajuste automaticamente ao tamanho da tela -->
+            <!-- mais precisamente, classe img-fluid do Bootstrap aplica max-width: 100% e height: auto -->
+            <a class="navbar-brand" href="/"> 
+                <img src="resources/logo_alternativo.png" alt="Logo CESAE Digital" class="img-fluid logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <!-- Search bar -->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control-search mr-sm-2 search-type" type="search" placeholder="O que deseja aprender?" aria-label="Buscar">
+                <button class="btn btn-outline-success my-2 my-sm-0 btn-search" type="submit">Buscar</button>
+            </form>
+
+
+            <!-- Links da barra de navegação -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+
+                <!--
+                ms-auto → é uma classe utilitária do Bootstrap que aplica uma margem automática à esquerda de um elemento.
+                gap → Define um pequeno espaçamento padrão entre os itens.
+                -->
+                <ul class="navbar-nav gap-1 gap-md-1 gap-lg-1 ms-auto">
+
+                    <!-- Link de sobre -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+
+                    <!-- Dropdown de áreas -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="cursos.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="window.location.href='cursos.html'">
+                            Cursos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="delopment.html">&nbsp;&nbsp;&nbsp;Development&nbsp;&nbsp;&nbsp;</a></li>
+                            <li><a class="dropdown-item" href="itnetwork.html">&nbsp;&nbsp;&nbsp;IT Network&nbsp;&nbsp;&nbsp;</a></li>
+                            <li><a class="dropdown-item" href="mediadesign.html">&nbsp;&nbsp;&nbsp;Media Design&nbsp;&nbsp;&nbsp;</a></li>
+                            <li><a class="dropdown-item" href="people.html">&nbsp;&nbsp;&nbsp;People&nbsp;&nbsp;&nbsp;</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Link de Colaborar -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="colaborar.html">Colaborar</a>
+                    </li>
+
+
+                    <!-- Link de Login -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+
+
+
+                    <!-- Botão de Registo -->
+
+                    <!--
+                    - O botão vira um link em telas menores (para não ficar esquisito).
+                    - Para isso usamos d-none e d-lg-none.
+                    - d-none e d-lg-none são classes do Bootstrap usadas para controlar a visibilidade de elementos com base no tamanho da tela.
+
+                    - d-none: oculta o elemento em todos os tamanhos de tela.
+                    - d-lg-block: Faz o elemento reaparecer como um bloco (display: block;) em telas grandes (lg) ou maiores (≥992px).
+                    -->
+
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="btn btn-outline-primary my-2 my-sm-0 btn-register" href="registar.html">Registar</a>
+                    </li>
+
+
+                    <!-- Link de Registo (para telas pequenas) -->
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="registar.html">Registar</a>
+                    </li>
+
+                </ul> 
+
+
+            </div>
+        </div>
+    </nav>
+
+
+     <!-- CAROUSEL -->
+    
+    <!-- data-bs-interval="3000" dita o intervalo de tempo que o carousel leva para mudar para o próximo slide -->
+    <!-- "mb-5" na class aplica uma "margin bottom" ao final do carousel -->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade mb-5 mb-md-5" data-bs-ride="carousel" data-bs-interval="3000">
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+    
+        <div class="carousel-inner">
+            
+
+            <!-- Image 1 -->
+            <div class="carousel-item active">
+                <img src="assets/carousel_1.jpg" class="d-block w-100" alt="">
+            </div>
+
+            <!-- Image 2 -->
+            <div class="carousel-item">
+                <img src="assets/carousel_2.jpg" class="d-block w-100" alt="">
+            </div>
+
+        </div>
+
+        <!-- Carousel buttons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+
+
+
+    <!-- INÍCIO DO CONTEÚDO DA PÁGINA COM MARGENS -->
+
+<!--
+    Esta div envolve o conteúdo principal e aplica margens responsivas nas laterais:
+    - mx-3: Aplica uma margem horizontal de 16px (valor padrão do Bootstrap) em todos os tamanhos de tela.
+    - mx-md-4: Aplica uma margem horizontal de 24px (valor padrão do Bootstrap) em telas médias (largura mínima de 768px) e maiores.
+    - m significa "margin" (margem).
+    - x significa "eixo X" ou "horizontal" (esquerda e direita).
+    - md = médio, sm = small, lg = large.
+-->
+
+<div class="content-wrapper mx-4 mx-md-5">  
+
+
+
+
+    
+ <!-- Cards Carousel - IT Network -->
+    <!-- (Kitchen sink typed cards sem slides, 4 cards por fileira) -->
+  
+    <br>
+    <h2 class="fs-2 fs-md-2 fs-lg-1 mb-3 mb-md-2"><b>IT Network:</b></h2>
+    <p class="fs-6 fs-md-5 mb-1 mb-md-0">  
+        Domine a gestão de infraestruturas tecnológicas e aprimore os seus conhecimentos em sistemas operativos, redes e computação em nuvem.</p>  
+    <p class="fs-6 fs-md-5 mb-5 mb-md-5">  
+        Aprenda a administrar, otimizar e proteger ambientes digitais, garantindo maior eficiência e segurança nas operações tecnológicas.</p>  
+
+    <!-- Cards Section -->
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-4 gx-3 gy-5">
+
+            <!-- Card 1 - Administração de Sistemas Windows -->
+            <div class="col">
+                <div class="card">
+                    <img src="assets/card_back_end.jpg" class="card-img-top" alt="Image description">
+                    <div class="card-body">
+                        <h5 class="card-title">Administração de Sistemas Windows &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2 - AWS RE/START - Cloud Computing and Network Administration -->
+            <div class="col">
+                <div class="card">
+                    <img src="assets/card_back_end.jpg" class="card-img-top" alt="Image description">
+                    <div class="card-body">
+                        <h5 class="card-title">AWS RE/START &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3 - Linux OS and Network Essentials -->
+            <div class="col">
+                <div class="card">
+                    <img src="assets/card_back_end.jpg" class="card-img-top" alt="Image description">
+                    <div class="card-body">
+                        <h5 class="card-title">Linux OS and Network Essentials</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 4 - Administração de Sistemas Linux -->
+            <div class="col">
+                <div class="card">
+                    <img src="assets/card_back_end.jpg" class="card-img-top" alt="Image description">
+                    <div class="card-body">
+                        <h5 class="card-title">Administração de Sistemas Linux</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <br><br>
+
+
+
+
+</div> <!-- FIM DO CONTEÚDO DA PÁGINA COM MARGEM APLICADA -->
+
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer text-center py-5 px-5">
+    <!-- 
+    py → padding do eixo y (padding vertical) do footer todo.
+    py-5 → py-5 aplica um padding vertical de 3rem (3rem = 48 pixels).
+    
+    py-0 -> 0rem (0px)
+    py-1 -> 0.25rem (4px)
+    py-2 -> 0.5rem (8px)
+    py-3 -> 1rem (16px)
+    py-4 -> 1.5rem (24px)
+    py-5 -> 3rem (48px)
+    -->
+    
+        <div class="container-fluid"> <!-- container-fluid faz ocupar toda a largura (width) da tela. -->
+            <div class="row">
+    
+    
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 footer-text">© 2025 CESAE Digital. Todos os direitos reservados.</p>
+                    <br>
+                    <p class="mt-1 footer-links">
+                        <a href="https://www.cesaedigital.pt/fldrSite/pages/cookies.aspx" class="footer-link">Política de Cookies</a> | 
+                        <a href="https://www.cesaedigital.pt/fldrSite/pages/privacyPolicy.aspx" class="footer-link">Política de Privacidade</a> | 
+                        <a href="https://www.cesaedigital.pt/fldrSite/pages/personalDataPolicy.aspx" class="footer-link">Política de Dados Pessoais</a> | 
+                        <a href="https://www.cesaedigital.pt/fldrSite/pages/termsAndConditions.aspx" class="footer-link">Termos & Condições</a> | 
+                        <a href="https://www.livroreclamacoes.pt/Inicio/" class="footer-link">Livro de Reclamações</a> | 
+                        <a href="https://www.cniacc.pt/pt/" class="footer-link">Resolução de Litígios</a> | 
+                        <a href="#" class="footer-link">Contactos</a>
+                    </p>
+                </div>
+    
+    
+    
+                 <!-- 
+                text-center: alinha o texto ao centro em telas menores.
+                text-md-start: Alinha o texto à esquerda (início) em telas médias ou maiores
+                -->
+    
+                <!-- Ícones de redes sociais -->
+                <div class="col-md-6 text-center text-md-end mt-4 mt-md-5">
+                    <!-- Linkedin -->
+                    <a href="https://www.linkedin.com/school/cesae-digital/posts/?feedView=all"><img src="assets/icon_linkedin.png" class="social-icon" alt="LinkedIn"></a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/cesae.digital/"><img src="assets/icon_instagram.png" class="social-icon" alt="Instagram"></a>
+                    <!-- Youtube -->
+                    <a href="https://www.youtube.com/@cesaedigital"><img src="assets/icon_youtube.png" class="social-icon" alt="YouTube"></a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/CesaeDigital"><img src="assets/icon_facebook.png" class="social-icon" alt="Facebook"></a>
+                </div>
+    
+    
+            </div>
+        </div>
+        
+    </footer>
+    
+    </body>
+    
+    
