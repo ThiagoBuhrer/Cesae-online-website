@@ -67,14 +67,16 @@ body {
     border-radius: 3px !important;
     border: none !important;
     padding: 24px 2px !important;
-    visibility: hidden;
+    display: none !important;
+    visibility: hidden !important;
     opacity: 0;
     transition: opacity 0.2s ease, visibility 0s 0.2s;
 }
 
 .nav-item.dropdown:hover .dropdown-menu {
-    visibility: visible;
+    display: block !important;
     opacity: 1;
+    visibility: visible !important;
     transition: opacity 0.2s ease, visibility 0s 0s;
 }
 
@@ -109,7 +111,7 @@ body {
 .search-type {
     border: 1px solid #e2c8e4 !important;
     background-color: #f8f9fa !important;
-    color: #000;
+    color: #36236a !important;
     padding: 0.5rem;
     margin-right: 0.5rem;
     border-radius: 20px !important;
@@ -270,38 +272,37 @@ body {
     text-decoration: none;   /* Remover o sublinhado ao passar o mouse */
 }
 
-/* Setas do carousel */
+/* Seta da esquerda (anterior) */
 .carousel-control-prev-icon {
     position: absolute;
-    justify-content: left;
-    top: 50%; 
-    transform: translateY(-50%); 
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2%; /* Encostada à esquerda */
+    width: 2vw !important;
+    height: auto;
     border-radius: 5%;
-    left: 2%; /* Mantém a seta próxima à margem esquerda (2% da largura da tela) */
-    width: 2vw; /* Largura da seta ajustada proporcionalmente à largura da tela --> opção mais responsiva, se comparado com width e height */
-    height: 2vw; /* Altura da seta ajustada proporcionalmente à largura da tela --> opção mais responsiva, se comparado com width e height */
-    /* obs: vw = viewport width. */
-    /* obs: 1vw = 1% da largura total da sua viewport */
+    padding: 0;
+    margin: 0;
 }
 
+/* Seta da direita (próxima) */
 .carousel-control-next-icon {
     position: absolute;
-    justify-content: right;
-    top: 50%; 
-    transform: translateY(-50%); 
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2%; /* Encostada à direita */
+    width: 2vw !important;
+    height: auto;
     border-radius: 5%;
-    right: 2%; /* Mantém a seta próxima à margem direita (2% da largura da tela) */
-    width: 6vw; /* Largura da seta ajustada proporcionalmente à largura da tela --> opção mais responsiva, se comparado com width e height */
-    height: 6vw; /* Altura da seta ajustada proporcionalmente à largura da tela --> opção mais responsiva, se comparado com width e height */
+    padding: 0;
+    margin: 0;
 }
-
 
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
     background-color: #36236a; 
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-
 
 /* Card Container */
 .card {
@@ -313,7 +314,6 @@ body {
 .card:hover {
 transform: translateY(-12px);
 }
-
 
 /* Card Image */
 .card-img-top {
@@ -692,14 +692,12 @@ z-index: 1;
     border: 1px solid #36236a !important;
 }
 
-
 .subscribe:hover {
     background-color: #36236a !important; 
     color: #e2c8e4 !important; 
     border: 1px solid #e2c8e4 !important;
     text-decoration: none !important; 
 }
-
 
 /* Espaçamento entre os boxes */
 .row > .col-md-6:first-child {
@@ -755,4 +753,3 @@ z-index: 1;
     font-size: 0.9rem;
     color: #e2c8e4 !important;
 }
-

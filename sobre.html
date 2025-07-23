@@ -85,14 +85,14 @@
 
                     <!-- Dropdown de áreas -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="cursos.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="window.location.href='cursos.html'">
+                        <a class="nav-link dropdown-toggle" href="index.html" role="button">
                             Cursos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="delopment.html">&nbsp;&nbsp;&nbsp;Development&nbsp;&nbsp;&nbsp;</a></li>
-                            <li><a class="dropdown-item" href="itnetwork.html">&nbsp;&nbsp;&nbsp;IT Network&nbsp;&nbsp;&nbsp;</a></li>
-                            <li><a class="dropdown-item" href="mediadesign.html">&nbsp;&nbsp;&nbsp;Media Design&nbsp;&nbsp;&nbsp;</a></li>
-                            <li><a class="dropdown-item" href="people.html">&nbsp;&nbsp;&nbsp;People&nbsp;&nbsp;&nbsp;</a></li>
+                            <li><a class="dropdown-item" href="index.html">&nbsp;&nbsp;&nbsp;Development&nbsp;&nbsp;&nbsp;</a></li>
+                            <li><a class="dropdown-item" href="index.html">&nbsp;&nbsp;&nbsp;IT Network&nbsp;&nbsp;&nbsp;</a></li>
+                            <li><a class="dropdown-item" href="index.html">&nbsp;&nbsp;&nbsp;Media Design&nbsp;&nbsp;&nbsp;</a></li>
+                            <li><a class="dropdown-item" href="index.html">&nbsp;&nbsp;&nbsp;People&nbsp;&nbsp;&nbsp;</a></li>
                         </ul>
                     </li>
 
@@ -103,10 +103,16 @@
 
 
                     <!-- Link de Login -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login</a>
-                    </li>
 
+                    <!--
+                     - offcanvas: componente do Bootstrap que exibe conteúdo oculto fora da tela, geralmente em uma barra lateral, que aparece ao interagir com um botão ou outro gatilho.
+                    - data-bs-toggle="offcanvas": define que o botão vai ativar o offcanvas
+                    - data-bs-target="#offcanvasLogin": especifica o ID do offcanvas a ser aberto 
+                    - aria-controls="offcanvasLogin">: vincula o botão ao offcanvas com esse ID 
+                    -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin" aria-controls="offcanvasLogin">Login</a>
+                    </li>
 
 
                     <!-- Botão de Registo -->
@@ -118,16 +124,21 @@
 
                     - d-none: oculta o elemento em todos os tamanhos de tela.
                     - d-lg-block: Faz o elemento reaparecer como um bloco (display: block;) em telas grandes (lg) ou maiores (≥992px).
+
+                    - offcanvas: componente do Bootstrap que exibe conteúdo oculto fora da tela, geralmente em uma barra lateral, que aparece ao interagir com um botão ou outro gatilho.
+                    - data-bs-toggle="offcanvas": define que o botão vai ativar o offcanvas
+                    - data-bs-target="##offcanvasRegister": especifica o ID do offcanvas a ser aberto 
+                    - aria-controls="#offcanvasRegister">: vincula o botão ao offcanvas com esse ID 
                     -->
 
                     <li class="nav-item d-none d-lg-block">
-                        <a class="btn btn-outline-primary my-2 my-sm-0 btn-register" href="registar.html">Registar</a>
+                        <a class="btn btn-outline-primary my-2 my-sm-0 btn-register" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRegister" aria-controls="#offcanvasRegister">Registar</a>
                     </li>
 
 
                     <!-- Link de Registo (para telas pequenas) -->
                     <li class="nav-item d-lg-none">
-                        <a class="nav-link" href="registar.html">Registar</a>
+                        <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRegister" aria-controls="#offcanvasRegister">Registar</a>
                     </li>
 
                 </ul> 
@@ -136,6 +147,71 @@
             </div>
         </div>
     </nav>
+
+
+    <!-- OFFCANVAS DE LOGIN E REGISTO -->
+
+        <!-- Offcanvas para Login -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLogin" aria-labelledby="offcanvasLoginLabel">
+            <div class="offcanvas-header mb-4">
+                <h5 class="offcanvas-title  mt-5" id="offcanvasLoginLabel">Fazer login:</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+            </div>
+            <div class="offcanvas-body">
+                <!-- Formulário de Login -->
+                <h5 class="mb-4" >Insira os seus dados:</h5>
+                <form>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Digite sua senha" required>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-offcanvas">Entrar</button>
+                </form>
+                <br>
+                <p class="warning mt-4">Eu aceito os <a class="warning-link" href="https://www.cesaedigital.pt/fldrSite/pages/termsAndConditions.aspx">Termos e Condições</a> e a <a class="warning-link" href="https://www.cesaedigital.pt/fldrSite/pages/privacyPolicy.aspx">Política de Privacidade</a> da CESAE Digital. Está com problemas para entrar? Experimente visitar a nossa página de <a class="warning-link" href="https://www.cesaedigital.pt/fldrSite/pages/faqs.aspx">Perguntas Frequentes</a>.</p>
+                <hr>
+                <button class="btn btn-offcanvas-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRegister" aria-controls="offcanvasRegister">Ainda não tem conta? Registe-se</button>
+            </div>
+            </div>
+    
+    
+            <!-- Offcanvas para Registro -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRegister" aria-labelledby="offcanvasRegisterLabel">
+                <div class="offcanvas-header mb-4">
+                    <h5 class="offcanvas-title mt-5" id="offcanvasRegisterLabel">Fazer registo na CESAE:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <!-- Formulário de Registro -->
+                    <h5 class="mb-2">Insira os seus dados:</h5>
+                    <br>
+                    <form>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="Digite seu e-mail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Digite sua senha" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerConfirmPassword" class="form-label">Confirmar Senha</label>
+                            <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirme sua senha" required>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-offcanvas">Registar</button>
+                    </form>
+                    <br>
+                    <p class="warning mt-4">Eu aceito os <a class="warning-link" href="https://www.cesaedigital.pt/fldrSite/pages/termsAndConditions.aspx">Termos e Condições</a> e a <a class="warning-link" href="https://www.cesaedigital.pt/fldrSite/pages/privacyPolicy.aspx">Política de Privacidade</a> da CESAE Digital. Está com problemas para entrar? Experimente visitar a nossa página de <a class="warning-link" href="https://www.cesaedigital.pt/fldrSite/pages/faqs.aspx">Perguntas Frequentes</a>.</p>
+                    <hr>
+                    <button class="btn btn-offcanvas-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin" aria-controls="offcanvasLogin">Já tem conta? Faça login</button>
+                </div>
+            </div>
 
 
      <!-- CAROUSEL -->
@@ -344,6 +420,11 @@
         </div>
         
     </footer>
+
+
+    <!-- Link para o arquivo JS -->
+    <script src="scripts/scripts.js"></script>
+    
     
     </body>
     
